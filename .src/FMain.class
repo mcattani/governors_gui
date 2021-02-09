@@ -1,0 +1,132 @@
+' Gambas class file
+
+'  This program Is Free software: you can redistribute it And / Or modify
+'  it under the terms Of the GNU General Public License As Published by
+'  the Free Software Foundation, either version 3 Of the License, Or
+'  (at your option) any later version.
+
+'    This program Is Distributed In the hope that it will be useful,
+'    but WITHOUT ANY WARRANTY; without even the implied warranty Of
+'    MERCHANTABILITY Or FITNESS For A PARTICULAR PURPOSE. See the
+'    GNU General Public License For more details.
+'    You should have received a Copy Of the GNU General Public License
+'    along With this program.If Not, see < https: / / www.gnu.org / licenses / > .
+
+' Para más información sobre este programa visite: https://thenerdyapprentice.blogspot.com/
+
+Public Cores As Integer
+Public Governor As String
+Public Gov As String
+
+Public Sub Form_Open()
+FMain.text = "//Governors GUI//" & " v" & Application.Version
+
+
+  ' Primero chequemos que el programa este instalado
+  If Not Exist("/usr/bin/cpufreq-info") Then
+    Message.Error("El programa <cpufreq> no esta instalado en el sistema")
+    Return
+  Endif
+
+  'Ahora llamamos a la función que nos devuelve los governors
+  txSalida1.Text = "Los governors disponibles para este procesador son: " & mGovernor.gDisp()
+
+  'Llamamos a la funcion que setea el knob
+  MaxKnob()
+
+  'Mostramos el icono en la barra de tareas
+  ti.Show
+
+End
+
+Public Sub MaxKnob()
+
+  sbCores.MaxValue = mGovernor.CantProc()
+  sbCores.MinValue = 1
+  sbCores.Value = 4
+
+End
+
+Public Sub btSetear_Click()
+
+  Dim CantG As Integer
+  Dim T As Integer
+  Dim Pass As String
+
+  'Chequeamos que el textbox con el password no este vacio
+  If txPass.Text = "" Then 
+    Message.Warning("Debe introducir la contraseña root/su!")
+    Return
+    Else
+      pass = txPass.Text
+    
+  Endif
+
+  'Llamamos a la funcion que chequea que governor se eligió
+  ChkG()
+
+  'Por practicidad vamos a usar otra variable, se rellena con cantidad de cores
+  CantG = sbCores.Value - 1
+
+  Print Gov
+
+  For t = 0 To CantG
+    mGovernor.setMicro(Gov, t, pass)
+
+  Next
+
+End
+
+Public Sub Form_KeyPress()
+
+  If Key.code = Key.Esc Then
+    ti.Delete
+    Quit
+  Endif
+
+End
+
+Public Sub TG_Timer()
+
+  txSalida2.text = mGovernor.GovAct()
+  txFrecActual.Text = mGovernor.fDisp()
+  
+End
+
+Public Sub ChkG()
+
+  If rbPerformance.Value = True Then GOV = "performance"
+  If rbOndemand.Value = True Then GOV = "ondemand"
+  If rbPowersave.Value = True Then GOV = "powersave"
+  If rbConservative.Value = True Then GOV = "conservative"
+  If rbInteractive.Value = True Then GOV = "interactive"
+  If rbschedutil.value = True Then GOV = "schedutil"
+
+End
+
+Public Sub btAcerca_Click()
+
+  frmAbout.Show
+
+End
+
+Public Sub btSalir_Click()
+  'Quitamos el icono de la barra de tareas al finalizar el programa.
+  ti.Delete
+  Quit
+
+End
+
+Public Sub Form_Close()
+  'Quitamos el icono de la barra de tareas al finalizar el programa.
+  ti.Delete
+
+End
+
+
+
+Public Sub btInfo_Click()
+
+  frmInfo.Show
+
+End

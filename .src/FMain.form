@@ -1,0 +1,132 @@
+# Gambas Form File 3.0
+
+{ Form Form
+  MoveScaled(0,0,61,82)
+  Text = ("// Governors - GUI //")
+  Icon = Picture["icon.png"]
+  Resizable = False
+  { txSalida1 TextArea
+    MoveScaled(1,5,59,7)
+    Font = Font["Bold"]
+    ToolTip = ("Governors disponibles para el procesador en uso.")
+    ReadOnly = True
+    Wrap = True
+  }
+  { rbPerformance RadioButton
+    MoveScaled(2,20,15,3)
+    Text = ("Performance")
+  }
+  { rbPowersave RadioButton
+    MoveScaled(2,24,15,3)
+    Text = ("Powersave")
+  }
+  { rbOndemand RadioButton
+    MoveScaled(18,20,15,3)
+    Text = ("Ondemand")
+  }
+  { rbConservative RadioButton
+    MoveScaled(18,24,15,3)
+    Text = ("Conservative")
+  }
+  { rbInteractive RadioButton
+    MoveScaled(33,20,15,3)
+    Text = ("Interactive")
+  }
+  { btInfo Button
+    MoveScaled(49,20,8,6)
+    ToolTip = ("Más información respecto a los governors")
+    Picture = Picture["icon:/32/info"]
+  }
+  { sbCores SliderBox
+    MoveScaled(1,35,59,4)
+    Font = Font["Bold"]
+    ToolTip = ("Cantidad de núcleos que se quieren configurar")
+    MinValue = 1
+    MaxValue = 0
+    DefaultValue = 4
+  }
+  { txPass TextBox
+    MoveScaled(27,42,33,4)
+    ToolTip = ("Introduzca aqui password root/su")
+    Password = True
+  }
+  { btSetear Button
+    MoveScaled(1,42,12,4)
+    ToolTip = ("Configura los distintos cores con el governor elegido")
+    Text = ("Setear")
+    Picture = Picture["icon:/22/exec"]
+  }
+  { btAcerca Button
+    MoveScaled(47,77,13,4)
+    Font = Font["-1"]
+    ToolTip = ("Muestra los datos del creador e información extra")
+    Text = ("Acerca de") & "..."
+    Picture = Picture["icon:/16/user"]
+  }
+  { btSalir Button
+    MoveScaled(1,77,12,4)
+    ToolTip = ("Salir del programa")
+    Text = ("Salir")
+    Picture = Picture["icon:/16/quit"]
+  }
+  { Label1 Label
+    MoveScaled(1,1,15,3)
+    Font = Font["Bold,+2"]
+    Text = ("Importante!")
+  }
+  { TextLabel2 TextLabel
+    MoveScaled(2,16,57,3)
+    Text = ("Elija el Governor compatible con su procesador:")
+  }
+  { Separator1 Separator
+    MoveScaled(1,14,59,1)
+  }
+  { Separator2 Separator
+    MoveScaled(1,29,59,1)
+  }
+  { TextLabel1 TextLabel
+    MoveScaled(2,31,50,3)
+    Text = ("Elija la cantidad de procesadores que quiere configurar:")
+  }
+  { Separator3 Separator
+    MoveScaled(1,40,59,1)
+  }
+  { txSalida2 TextArea
+    MoveScaled(1,65,59,10)
+    ToolTip = ("Muestra los governors en uso")
+    Alignment = Align.Left
+    ReadOnly = True
+    Wrap = True
+  }
+  { TG #Timer
+    #MoveScaled(48,1)
+    Enabled = True
+  }
+  { TI #TrayIcon
+    #MoveScaled(54,1)
+    Picture = Picture["icon.png"]
+  }
+  { TextLabel3 TextLabel
+    MoveScaled(14,43,12,3)
+    Text = ("Pass root/su?")
+  }
+  { frFrecActual Frame
+    MoveScaled(1,48,35,15)
+    ToolTip = ("Muestra la frecuencia actual del CPU")
+    Text = ("Frecuencia actual de los procesadores\n")
+    { txFrecActual TextArea
+      MoveScaled(1,4,32,10)
+      ToolTip = ("Frecuencia actual de los procesadores")
+      Alignment = Align.Center
+      ReadOnly = True
+    }
+  }
+  { PictureBox1 PictureBox
+    MoveScaled(41,48,16,16)
+    Picture = Picture["icon.png"]
+  }
+  { rbschedutil RadioButton
+    MoveScaled(33,24,15,3)
+    Text = ("Schedutil")
+  }
+}

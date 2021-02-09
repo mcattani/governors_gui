@@ -1,0 +1,11 @@
+# Gambas Form File 3.0
+
+{ Form Form
+  MoveScaled(0,0,85,50)
+  { txInfo TextArea
+    MoveScaled(0,0,85,49)
+    ToolTip = ("Información respecto a los reguladores de ajuste")
+    Text = ("Reguladores de ajuste (Esquemas de potencia de la CPU)\n\nSe puede considerar a los reguladores como esquemas de potencia de la CPU preconfigurados. \n\nReguladores disponibles:\n\nSchedutil (Por defecto, ha estado incorporado desde el kernel 4.7 al kenel 4.18):\n    Aprovecha los datos de utilización del planificador del núcleo en un intento de tomar mejores \n    decisiones sobre el ajuste del estado de frecuencia / rendimiento del CPU.\n    \nPerformance:\n    El regulador de rendimiento esta empotrado en el núcleo y hace que las CPU funcionen \n    a la máxima velocidad de reloj.\n    \nOndemand (recomendado para AMD):\n    Incrementa/Decrementa dinámicamente la velocidad de reloj de la CPU en base  \n   la carga del sistema.\n    \nConservative:\n    Similar a ondemand, pero más conservador (los cambios de velocidad son más suaves)\n    \nPowersave:\n    Hace funcionar al CPU a la velocidad mínima.\n    \nMas información: https://www.kernel.org/doc/Documentation/cpu-freq/governors.txt")
+    ReadOnly = True
+  }
+}

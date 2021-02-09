@@ -1,0 +1,62 @@
+' Gambas module file
+
+Public Function fDisp() As String
+'Comando que nos devuelve la velocidad actual de los CPU
+'cat /proc/cpuinfo | grep "cpu MHz"
+
+Dim Salida As String, Comando As String
+Comando = "cat /proc/cpuinfo | " & "grep " & Chr(34) & "cpu MHz" & Chr(34)
+
+Shell (comando) To salida
+
+Return Salida
+
+End
+
+
+Public Function gDisp() As String ' Devuelve los governors disponibles
+
+  Dim Salida As String
+
+  Shell ("cpufreq-info -g") To Salida
+
+  Return Salida
+
+End
+
+Public Function CantProc() As String   'Devuelve la cantidad de procesadores
+
+  Dim Salida As String
+
+  Shell ("cat /proc/cpuinfo | grep processor | wc -l") To Salida
+
+  Salida = RTrim(LTrim(salida)) ' para poder convertirlo en entero hay que eliminar los espacios adelante y al final
+  Salida = CInt(Salida)
+
+  Return Salida
+
+End
+
+Public Function GovAct() As String
+
+  Dim Salida As String, Comm As String
+
+  Comm = "cpufreq-info | grep " & Chr(34) & "The governor" & Chr(34)
+
+  Shell (Comm) To Salida
+
+  Return Salida
+
+End
+
+Public Function setMicro(governor As String, core As Integer, password As String)
+
+  Dim COMM As String
+
+  COMM = " | sudo -S cpufreq-set -c " & core & " -g " & governor
+
+  Print comm
+
+  Shell ("echo " & password & comm)
+
+End

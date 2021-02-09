@@ -1,0 +1,24 @@
+' Gambas class file
+
+
+Public Sub Form_Open()
+
+  txInfo.Height = frmInfo.Height
+  txInfo.Width = frmInfo.Width
+  
+
+End
+
+Public Sub Form_Resize()
+
+  txInfo.Height = frmInfo.Height
+  txInfo.Width = frmInfo.Width
+
+End
+
+Public Sub Form_KeyPress()
+
+  If Key.code = Key.Esc Then Me.Close
+  
+
+End
