@@ -1,0 +1,32 @@
+Format: 1.8
+Date: Tue, 19 Oct 2021 12:00:00 +0000
+Source: governors-gui
+Binary: governors-gui
+Built-For-Profiles: noudeb
+Architecture: source all
+Version: 1.2.9-0ubuntu1
+Distribution: unstable
+Urgency: low
+Maintainer: The Nerdy Apprentice <marianocattani@gmail.com>
+Changed-By: The Nerdy Apprentice <marianocattani@gmail.com>
+Description:
+ governors-gui - GUI que permite controlar la frecuencia del procesador a través..
+Changes:
+ governors-gui (1.2.9-0ubuntu1) unstable; urgency=low
+ .
+   * Pequeños errores corregidos
+Checksums-Sha1:
+ 74dd015dd1b381130f7e01a281efc2f2997edaa7 1261 governors-gui_1.2.9-0ubuntu1.dsc
+ 02cc5eff354f841c2527e1a2da88b5249bec3239 1510 governors-gui_1.2.9-0ubuntu1.diff.gz
+ 4c4e00d6aafdf6ddc43eebcb744b6325d01600ca 270892 governors-gui_1.2.9-0ubuntu1_all.deb
+ 3903e8f87b0ae15c5edc82c2b07b7169cf102582 7256 governors-gui_1.2.9-0ubuntu1_amd64.buildinfo
+Checksums-Sha256:
+ 0adaa25e837ad2cd1c258e2bb9aaa50f3be486c841445634772e7989f782b6a4 1261 governors-gui_1.2.9-0ubuntu1.dsc
+ 98a1c95240a5e707c7a6921f523fc2d7ae0715020a7d8bee034e65cf8ddd6813 1510 governors-gui_1.2.9-0ubuntu1.diff.gz
+ 47a3be9f7024511ee1d93d9d8b55e8564aeabf51d9d5802055892c8b9a5c759a 270892 governors-gui_1.2.9-0ubuntu1_all.deb
+ 138b12c17ceeaeab5c4fece7ccc5c2086dc1388ced9e2fd087de439514d861ae 7256 governors-gui_1.2.9-0ubuntu1_amd64.buildinfo
+Files:
+ cd5f305ced2bb8472e0ea5c92bd5c90f 1261 contrib/admin optional governors-gui_1.2.9-0ubuntu1.dsc
+ 40f15359a500008712fdafcf9527f769 1510 contrib/admin optional governors-gui_1.2.9-0ubuntu1.diff.gz
+ f649410acd49ca07b82db8229ea8a5e1 270892 contrib/admin optional governors-gui_1.2.9-0ubuntu1_all.deb
+ 6509b9b0839025e1e57ad2a067d7ce7d 7256 contrib/admin optional governors-gui_1.2.9-0ubuntu1_amd64.buildinfo

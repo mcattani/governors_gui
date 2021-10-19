@@ -6,7 +6,7 @@
   Icon = Picture["icon.png"]
   Resizable = False
   { txSalida1 TextArea
-    MoveScaled(1,5,59,7)
+    MoveScaled(1,5,59,8)
     Font = Font["Bold"]
     ToolTip = ("Governors disponibles para el procesador en uso.")
     ReadOnly = True
@@ -15,6 +15,7 @@
   { rbPerformance RadioButton
     MoveScaled(2,20,15,3)
     Text = ("Performance")
+    Value = True
   }
   { rbPowersave RadioButton
     MoveScaled(2,24,15,3)
@@ -104,7 +105,7 @@
   }
   { TI #TrayIcon
     #MoveScaled(54,1)
-    Picture = Picture["icon.png"]
+    Picture = Picture.Load("icon.png")
   }
   { TextLabel3 TextLabel
     MoveScaled(14,43,12,3)
