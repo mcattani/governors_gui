@@ -1,0 +1,32 @@
+Format: 1.8
+Date: Sun, 12 Dec 2021 12:00:00 +0000
+Source: governors-gui
+Binary: governors-gui
+Architecture: source all
+Version: 1.2.11-0ubuntu1
+Distribution: unstable
+Urgency: low
+Maintainer: The Nerdy Apprentice <marianocattani@gmail.com>
+Changed-By: The Nerdy Apprentice <marianocattani@gmail.com>
+Description:
+ governors-gui - GUI que permite controlar la frecuencia del procesador a través..
+Changes:
+ governors-gui (1.2.11-0ubuntu1) unstable; urgency=low
+ .
+   * Agregada la opción de presionar "Enter" en vez de tener que hacer click en el
+     botón "Setear"
+Checksums-Sha1:
+ 8efbde495a8a548b8a8bdc084b3e5996c695da43 1268 governors-gui_1.2.11-0ubuntu1.dsc
+ 39970cd7a55fd1ad1a3fee003145096c2b51968e 1585 governors-gui_1.2.11-0ubuntu1.diff.gz
+ 02eaf0797bae60c074e31b78c69dd922e63899f5 502900 governors-gui_1.2.11-0ubuntu1_all.deb
+ 99cddbb240a123f17078a41d9977ceba5dcb729e 13510 governors-gui_1.2.11-0ubuntu1_amd64.buildinfo
+Checksums-Sha256:
+ 3a8a8900d8487a02b886d64d6b8087e0271a572787aaf6044e03c4879b086215 1268 governors-gui_1.2.11-0ubuntu1.dsc
+ a4d52a1aa38e6c1257e475b11ed0b2632db62e7703617487c7a265d0928e890b 1585 governors-gui_1.2.11-0ubuntu1.diff.gz
+ 4537dcc5ab6a4a5bc377724e83ef0a112b7eaf2d4afe8fddcb10d99d6f36c4dc 502900 governors-gui_1.2.11-0ubuntu1_all.deb
+ 6e8ba509508680c7c971763d910db80f0c097ebec291ec98dc292ea7d5b11fbe 13510 governors-gui_1.2.11-0ubuntu1_amd64.buildinfo
+Files:
+ 6394a3f234d49defe40ea4c23ccf5eca 1268 contrib/admin optional governors-gui_1.2.11-0ubuntu1.dsc
+ 281092bc6d7ad0a3a85e5f58ba6d4844 1585 contrib/admin optional governors-gui_1.2.11-0ubuntu1.diff.gz
+ ea2fabbf9c2c1df0ec7599151bac38f5 502900 contrib/admin optional governors-gui_1.2.11-0ubuntu1_all.deb
+ a85c7bf515ec09ee285b0e094a15eb72 13510 contrib/admin optional governors-gui_1.2.11-0ubuntu1_amd64.buildinfo

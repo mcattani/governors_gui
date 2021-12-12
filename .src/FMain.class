@@ -130,3 +130,11 @@ Public Sub btInfo_Click()
   frmInfo.Show
 
 End
+
+Public Sub txPass_KeyRelease()
+
+  If Key.code = Key.Return Then
+    btSetear_Click()
+  Endif
+
+End
